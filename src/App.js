@@ -2,6 +2,7 @@ import { Container } from "@material-ui/core";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
+import Definitions from "./components/Definitions/Definitions";
 import Header from "./components/Header/Header";
 
 function App() {
@@ -22,7 +23,6 @@ function App() {
     };
     dictionaryApi();
   }, [category, word]);
-  console.log(meanings);
   return (
     <div
       className="App"
@@ -38,6 +38,9 @@ function App() {
           word={word}
           setWord={setWord}
         />
+        {meanings.length ? (
+          <Definitions word={word} meanings={meanings} category={category} />
+        ) : null}
       </Container>
     </div>
   );
