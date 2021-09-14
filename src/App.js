@@ -70,6 +70,7 @@ function App() {
                 top: 0,
                 right: 15,
                 paddingTop: 10,
+                paddingBottom: 10,
               }}
             >
               <span>{darkMode ? "Dark" : "Light"} Mode</span>
